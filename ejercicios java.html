@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicios JavaScript</title>
+</head>
+<body>
+
+<!-- Ejercicio 1 -->
+<script>
+    let hola = "hola";
+    console.log(hola + ", buen dia");
+</script>
+
+<!-- Ejercicio 2 -->
+<script>
+    let variable1 = 123;
+    console.log(variable1);
+</script>
+
+<!-- Ejercicio 3 -->
+<script>
+    let miNumero1 = 123;
+    let miNumero2 = 12.3;
+    let miString = "argentina";
+    let miBoolean = true;
+    let indefinido;
+    let miObjeto1 = {};
+
+    console.log(typeof miNumero1);
+    console.log(typeof miNumero2);
+    console.log(typeof miString);
+    console.log(typeof miBoolean);
+    console.log(typeof indefinido);
+    console.log(typeof miObjeto1);
+</script>
+
+<!-- Ejercicio 4 -->
+<script>
+    let miPalabra = "electronica";
+    console.log(parseInt(miPalabra));
+</script>
+
+<!-- Ejercicio 5 -->
+<script>
+    let minumero1 = 123;
+    let minumero2 = "2";
+
+    console.log(miNumero1 + parseInt(miNumero2));
+</script>
+
+<!-- Ejercicio 6 -->
+<script>
+    let suma = 0;
+    for (let i = 1; i <= 10; i++) {
+        suma += i;
+    }
+    console.log("la suma de los primeros 10 numeros naturales es:", suma);
+</script>
+
+<!-- Ejercicio 7 -->
+<script>
+    let palabras = ["dado", "electronica", "escocia", "rosario"];
+    for (let i = 0; i < palabras.length; i++) {
+        let indice = palabras[i].indexOf('a');
+        if (indice !== -1) {
+            console.log("La letra 'a' se encuentra en la palabra", palabras[i], "en la posicion", indice);
+            break;
+        }
+    }
+</script>
+
+<!-- Ejercicio 8 -->
+<script>
+    let mipalabra = "caminando en linea recta no puede uno llegar muy lejos";
+    if (miPalabra.length > 50) {
+        console.log("la frase tiene mas de 50 palabras");
+    } else {
+        console.log("la frase tiene menos de 50 palabras");
+    }
+</script>
+
+<!-- Ejercicio 9 -->
+<script>
+    let miArrayDeNumeros = [1, 15, 157, 63, 68, 1000, 44];
+    for (let i = 0; i < miArrayDeNumeros.length; i++) {
+        if (miArrayDeNumeros[i] % 2 === 0) {
+            console.log(miArrayDeNumeros[i], "es un número par");
+        } else {
+            console.log(miArrayDeNumeros[i], "no es un número par");
+        }
+    }
+</script>
+
+<!-- Ejercicio 10 -->
+<script>
+    var numero1 = 5;
+    var numero2 = 8;
+
+    if (numero1 < numero2) {
+        console.log("numero1 no es mayor que numero2");
+    }
+    if (numero2 > 0) {
+        console.log("numero2 es positivo");
+    }
+    if (numero1 !== 0) {
+        console.log("numero1 es distinto de cero");
+    }
+    if (numero1 + 1 < numero2) {
+        console.log("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+    }
+</script>
+
+<!-- Ejercicio 11 -->
+<script>
+    let nombre = "Juan";
+    let edad = 30;
+    let ciudad = "Madrid";
+    const PI = 3.14159;
+
+</script>
+
+<!-- Ejercicio 12 -->
+<script>
+    let precio = 10.99;
+    let disponible = true;
+    let frutas = ['manzana', 'banana', 'naranja'];
+    let info = { nombre: 'Juan', edad: 30, ciudad: 'Madrid' };
+</script>
+
+<!-- Ejercicio 13 -->
+<script>
+
+    console.log("Frutas:");
+    for (let i = 0; i < frutas.length; i++) {
+        console.log(frutas[i]);
+    }
+
+    function sumarNumeros(array) {
+        let suma = 0;
+        for (let i = 0; i < array.length; i++) {
+            suma += array[i];
+        }
+        return suma;
+    }
+
+    function encontrarLargoPalabras(array) {
+        let largos = [];
+        for (let i = 0; i < array.length; i++) {
+            largos.push(array[i].length);
+        }
+        return largos;
+    }
+
+    let numeros = [1, 2, 3, 4, 5];
+    let Palabras = ['casa', 'perro', 'computadora', 'sol'];
+
+    console.log("La suma de los números en el array es:", sumarNumeros(numeros));
+    console.log("Los largos de las palabras en el array son:", encontrarLargoPalabras(palabras));
+</script>
+
+<!-- Ejercicio 14 -->
+<script>
+    // se pueden aplicar map reduce y filter en los ejercicios 13 y 9
+    // por ejemplo para sumar los numeros y encontrar los largos de palabras
+</script>
+
+</body>
+</html>

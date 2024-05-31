@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividades JavaScript</title>
+</head>
+<body>
+
+<!-- HTML -->
+<input type="text" class="formulario" id="nombre" placeholder="Ingrese el nombre" value="Juancito">
+<input type="text" class="formulario" id="apellido" placeholder="Ingrese el apellido">
+<input type="text" class="formulario" id="telefono" placeholder="Ingrese el telefono">
+<div id="contenido">
+    <span>Contenido 1</span>
+    <span>Contenido 2</span>
+    <span>Contenido 3</span>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // 1. el valor del elemento cuyo id es "nombre"
+    let nombreValue = document.getElementById("nombre").value;
+    console.log("El valor del elemento cuyo id es 'nombre':", nombreValue);
+
+    // 2. la cantidad de letras (.length) del elemento cuyo id es "nombre"
+    let nombreLength = nombreValue.length;
+    console.log("La cantidad de letras del elemento cuyo id es 'nombre':", nombreLength);
+
+    // 3. la cantidad de elementos con clase "formulario" (.length)
+    let formularios = document.getElementsByClassName("formulario");
+    console.log("La cantidad de elementos con clase 'formulario':", formularios.length);
+
+    // 4. el id de cada uno de elementos de la clase "formulario"
+    for (let i = 0; i < formularios.length; i++) {
+        console.log("El id del elemento con clase 'formulario' en la posición", i, "es:", formularios[i].id);
+    }
+
+    // 5. cambiar el color de fondo del elemento cuyo id es "contenido" (style.background-color = ‘red’)
+    document.getElementById("contenido").style.backgroundColor = "red";
+
+    // 6. la cantidad de elementos "span" que tiene la página
+    let spans = document.querySelectorAll("span");
+    console.log("La cantidad de elementos 'span' que tiene la página:", spans.length);
+</script>
+
+</body>
+</html>

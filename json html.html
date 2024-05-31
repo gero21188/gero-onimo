@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios HTML y JavaScript</title>
+</head>
+<body>
+
+<!-- Ejercicio 1 -->
+<h1>Ejercicio 1</h1>
+<form id="formProfesor">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre"><br>
+    <label for="apellido">Apellido:</label><br>
+    <input type="text" id="apellido" name="apellido"><br>
+    <label for="dni">DNI:</label><br>
+    <input type="text" id="dni" name="dni"><br><br>
+    <input type="button" value="Guardar" onclick="guardarProfesor()">
+</form>
+
+<!-- Ejercicio 2 -->
+<h1>Ejercicio 2</h1>
+<form id="formMateria">
+    <label for="nombreMateria">Nombre:</label><br>
+    <input type="text" id="nombreMateria" name="nombreMateria"><br>
+    <label for="anio">Año:</label><br>
+    <input type="text" id="anio" name="anio"><br>
+    <label for="profesor">Profesor:</label><br>
+    <input type="text" id="profesor" name="profesor"><br><br>
+    <input type="button" value="Guardar" onclick="guardarMateria()">
+</form>
+
+<!-- Ejercicio 3 -->
+<h1>Ejercicio 3</h1>
+<form id="formObjeto">
+    <label for="tipoObjeto">Tipo:</label><br>
+    <input type="text" id="tipoObjeto" name="tipoObjeto"><br>
+    <label for="codigo">Código:</label><br>
+    <input type="text" id="codigo" name="codigo"><br><br>
+    <input type="button" value="Guardar" onclick="guardarObjeto()">
+</form>
+
+<!-- Ejercicio 4 -->
+<h1>Ejercicio 4</h1>
+<div id="listaObjetos"></div>
+
+<script>
+// Ejercicio 1
+function guardarProfesor() {
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const dni = document.getElementById('dni').value;
+    console.log('Datos del Profesor:');
+    console.log('Nombre:', nombre);
+    console.log('Apellido:', apellido);
+    console.log('DNI:', dni);
+}
+
+// Ejercicio 2
+function guardarMateria() {
+    const nombreMateria = document.getElementById('nombreMateria').value;
+    const anio = document.getElementById('anio').value;
+    const profesor = document.getElementById('profesor').value;
+    console.log('Datos de la Materia:');
+    console.log('Nombre:', nombreMateria);
+    console.log('Año:', anio);
+    console.log('Profesor:', profesor);
+}
+
+// Ejercicio 3
+function guardarObjeto() {
+    const tipoObjeto = document.getElementById('tipoObjeto').value;
+    const codigo = document.getElementById('codigo').value;
+    console.log('Datos del Objeto:');
+    console.log('Tipo:', tipoObjeto);
+    console.log('Código:', codigo);
+}
+
+// Ejercicio 4
+const data = [
+    {
+        "id":1,
+        "fecha": "24-6-2022 10:32:00",
+        "profesor":{
+            "id":1,
+            "nombre":"Juan",
+            "apellido":"Juan"
+        },
+        "materia":{
+            "id":100,
+            "nombre":"Programacion",
+            "anio":7
+        },
+        "aula": "Laboratorio 1",
+        "objetos": [
+            {"id":10, "tipo": "netbook", "codigo":25},
+            {"id":5, "tipo":"mouse", "codigo":10},
+            {"id":7, "tipo":"teclado", "codigo":1}
+        ]
+    },
+    {
+        "id":2,
+        "fecha": "24-6-2022 17:32:00",
+        "profesor":{
+            "id":2,
+            "nombre":"Jose",
+            "apellido":"Jose"
+        },
+        "materia":{
+            "id":102,
+            "nombre":"Programacion 2",
+            "anio":7
+        },
+        "aula": "Laboratorio 2",
+        "objetos": [
+            {"id":0, "tipo": "netbook", "codigo":1},
+            {"id":6, "tipo":"mouse", "codigo":2}
+        ]
+    }
+];
+
+const listaObjetos = document.getElementById('listaObjetos');
+data.forEach(item => {
+    const listItem = document.createElement('div');
+    listItem.innerHTML = `
+        <p>ID: ${item.id}</p>
+        <p>Fecha: ${item.fecha}</p>
+        <p>Profesor: ${item.profesor.nombre} ${item.profesor.apellido}</p>
+        <p>Materia: ${item.materia.nombre} (Año ${item.materia.anio})</p>
+        <p>Aula: ${item.aula}</p>
+        <p>Objetos:</p>
+        <ul>
+            ${item.objetos.map(objeto => `<li>${objeto.tipo} - Código: ${objeto.codigo}</li>`).join('')}
+        </ul>
+    `;
+    listaObjetos.appendChild(listItem);
+});
+</script>
+
+</body>
+</html>

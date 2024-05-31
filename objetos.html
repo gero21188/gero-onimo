@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicios JavaScript</title>
+</head>
+<body>
+
+<!-- Ejercicio 1 -->
+<script>
+    let persona1 = {"nombre":"Pepe", "apellido":"Gonzalez"};
+    console.log("Ejercicio 1:");
+    console.log(persona1);
+</script>
+
+<!-- Ejercicio 2 -->
+<script>
+    console.log("\nEjercicio 2:");
+    console.log("Nombre:", persona1.nombre);
+    console.log("Apellido:", persona1.apellido);
+</script>
+
+<!-- Ejercicio 3 -->
+<script>
+    let persona2 = {"nombre":"Maria", "apellido":"Gimenez"};
+    let personas = [persona1, persona2];
+    console.log("\nEjercicio 3:");
+    personas.forEach(personaActual => {
+        console.log(personaActual);
+    });
+</script>
+
+<!-- Ejercicio 4 -->
+<script>
+    let persona3 = {};
+    persona3.nombre= "Martin";
+    persona3.apellido="Capusoto";
+    persona3.edad =  18;
+    personas.push(persona3);
+    console.log("\nEjercicio 4:");
+    personas.forEach(personaActual => {
+        console.log(personaActual);
+    });
+</script>
+
+<!-- Ejercicio 5 -->
+<script>
+    console.log("\nEjercicio 5:");
+    const myObj = {"nombre": "Juancito", "edad": 31, "ciudad": "Chascomus"};
+    const myJSON = JSON.stringify(myObj);
+    console.log("JSON:", myJSON);
+
+    const text = '{"nombre":"Marianela","edad":"14"}';
+    let obj = JSON.parse(text);
+    console.log("Objeto:", obj);
+</script>
+
+<!-- Ejercicio 6 -->
+<script>
+    console.log("\nEjercicio 6:");
+    localStorage.setItem("testJSON", myJSON);
+    let retrievedText = localStorage.getItem("testJSON");
+    console.log("Texto recuperado:", retrievedText);
+</script>
+
+<!-- Ejercicio 7 -->
+<script>
+    console.log("\nEjercicio 7:");
+    let miMascota = {"nombre":"Julian", "raza":"pitbul", "edad":5};
+    let descripcion = `El nombre de mi mascota es ${miMascota.nombre} y tiene ${miMascota.edad} años`;
+    console.log(descripcion);
+</script>
+
+<!-- Ejercicio 8 -->
+<div id="contenido"></div>
+<script>
+    console.log("\nEjercicio 8:");
+    let objetosRetirados = [
+        {"tipo":"netbook","codigo":15,"retirada":true},
+        {"tipo":"netbook","codigo":1,"retirada":false}
+    ];
+    let miHtml="";
+    document.querySelector("#contenido").innerHTML="";
+    objetosRetirados.forEach(elem=>{
+        miHtml+=`<div>
+                    <span>Tipo: ${elem.tipo}</span>
+                    <span>Código: ${elem.codigo}</span>
+                    <span>Retirada: ${elem.retirada}</span>
+                </div>`;
+    });
+    document.querySelector("#contenido").innerHTML=miHtml;
+</script>
+
+</body>
+</html>
